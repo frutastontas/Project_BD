@@ -1,1 +1,4 @@
-This is where you store the sql files
+CREATE TABLE VEÍCULO
+(
+    ID_VEÍCULO INT PRIMARY KEY CHECK(ID_VEÍCULO>=0 AND ID_VEÍCULO<=1000),
+);
