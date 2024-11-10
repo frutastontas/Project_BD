@@ -1,0 +1,18 @@
+Usou-se o estilo E/R para as relações de subclasses das classes de Veículo e Utilizador. Assim existe um entidade principal, que é a super classe e nas subclasses existe uma foreign key que referencia a
+Primary Key da super classe, que neste caso é o id, e também é uma Primary Key da subclasse.
+
+
+
+Veículo: id_veículo → Consumo, Cor, Ano, Tração, Número de assentos, Estado
+Combustível: id → Tipo
+Funciona_a: "Esta relação não apresenta qualquer dependência funcional"
+Motor: Número de série → Nome, Cilindrada, Número de cilindros, Número de válvulas, Aspiração, Binário, Potência
+Utilizador: id → Email, Hash Palavra Passe, Username, País, Morada
+Cliente: id → Preferências
+Vendedor: id → histórico de vendas, Marca associada
+Anúncio: id → Data
+Interagiu: "Esta relação não apresenta qualquer dependência funcional"
+Marca: id → Nome, País de Origem
+Carro: id → Categoria, Número de portas
+Motociclo: id → Categoria
+Modelo: id → Nome, Data de lançamento, Variante
