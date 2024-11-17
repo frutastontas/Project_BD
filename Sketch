@@ -1,7 +1,12 @@
+
 Quanto toca ás dependências funcionais estas são bastante simples, devido à maneira como o projeto abordado. Isto faz com que as únicas dependências
 que existem em cada relação seja o seu ID determinar o resto dos atributos;
-Usou-se o estilo E/R para as relações de subclasses das classes de Veículo e Utilizador. Assim existe um entidade principal, que é a super classe e nas subclasses existe uma foreign key que referencia a
-Primary Key da super classe, que neste caso é o id, e também é uma Primary Key da subclasse.
+As transições foram feitas da maneira como foi abordado nas aulas. Por exemplo, numa relação de "um para muitos" tinha-se duas opções, ou criava-se 
+uma nova relação com duas foreign keys que apontam para cada relação sendo a Primary Key a chave que apontasse para a relação de "Many" ou
+colocava-se no lado "Many" uma foreign key que aponta para a outra relação.
+Usou-se o estilo E/R para as relações de subclasses das classes de Veículo e Utilizador. Assim existe uma entidade principal, que é a super classe 
+e nas subclasses existe uma foreign key que referencia a Primary Key da super classe,
+que neste caso é o id, e também é uma Primary Key da subclasse.
 
 
 
@@ -27,5 +32,14 @@ está na Terceira Forma Normal;
 
 Pode-se concluir que para termos uma ou ambas as formas, temos que garantir que para todas as suas dependências funcionais os atributos do lado 
 esquerdo são uma chave ou superchave e/ou os atributos do lado direito são prime.
+
+As nossas relações já partem de uma chave primária, que é o ID. Assim é possível concluir que 
+relações já se encontram numa das Formas Normais pedidas, não necessitando de decomposições
+nas suas relações.
+
+Dada a maneira como este projeto foi abordado, já era de esperar que as relações já tivessem nas Formas Normais pedidas,
+devido ao facto de o ID (Primary key) determinar o resto dos atributos.
+
+
 
 
