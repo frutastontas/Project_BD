@@ -1,14 +1,28 @@
 
-Quanto toca ás dependências funcionais estas são bastante simples, devido à maneira como o projeto abordado. Isto faz com que as únicas dependências
-que existem em cada relação seja o seu ID determinar o resto dos atributos;
-As transições foram feitas da maneira como foi abordado nas aulas. Por exemplo, numa relação de "um para muitos" tinha-se duas opções, ou criava-se 
-uma nova relação com duas foreign keys que apontam para cada relação sendo a Primary Key a chave que apontasse para a relação de "Many" ou
-colocava-se no lado "Many" uma foreign key que aponta para a outra relação.
-Usou-se o estilo E/R para as relações de subclasses das classes de Veículo e Utilizador. Assim existe uma entidade principal, que é a super classe 
+
+#### Modelo relacional
+Na passagem do modelo em UML para o esquema relacional decídimos manter
+um padrão consistente na conversão.
+
+As transições foram feitas da maneira como foi mostrado nas aulas. Por exemplo, numa relação de "um para muitos" tinha-se duas opções, ou criava-se 
+uma nova relação com duas foreign keys que apontam para cada uma das relaçôes, sendo a Primary Key a chave que aponta para a relação de "Many", ou
+colocava-se no lado "Many" uma foreign key que referencia a outra relação.
+
+Na nossa conversão decídimos ir com o primeiro, porque achamos que ficaria mais simples e percéptivel. Assim, cada foreign key mapeia
+para o ID (ou um nome equivalente) das entidades associadas e têm uma abreviatura dessa entidade no nome.
+
+Usou-se o estilo E/R para as relações de subclasses das classes de Veículo e Utilizador. Assim existe uma entidade principal, que é a super classe,
 e nas subclasses existe uma foreign key que referencia a Primary Key da super classe,
-que neste caso é o id, e também é uma Primary Key da subclasse.
+que neste caso é o ID, e também é uma Primary Key da subclasse.
+
+--"Colocar aqui o modelo relacional"
 
 
+#### Dependencias Funcionais
+
+Quanto toca ás dependências funcionais estas são bastante simples, devido à maneira como o projeto foi abordado e estruturado.
+Assim, as diversas entidades já se encontram isoladas e separadas.
+Isto faz com que as únicas dependências funcionais ,que existem em cada relação, sejam o seu ID determinar o resto dos atributos.
 
 Veículo: id_veículo → Consumo, Cor, Ano, Tração, Número de assentos, Estado
 Combustível: id → Tipo
@@ -33,12 +47,12 @@ está na Terceira Forma Normal;
 Pode-se concluir que para termos uma ou ambas as formas, temos que garantir que para todas as suas dependências funcionais os atributos do lado 
 esquerdo são uma chave ou superchave e/ou os atributos do lado direito são prime.
 
-As nossas relações já partem de uma chave primária, que é o ID. Assim é possível concluir que 
-relações já se encontram numa das Formas Normais pedidas, não necessitando de decomposições
-nas suas relações.
+As nossas relações já partem de uma chave primária, que é o ID. Assim é possível concluir que as
+relações já se encontram numa das Formas Normais pedidas, não necessitando de se realizar decomposições 
+para chegar a uma das Formas.
 
 Dada a maneira como este projeto foi abordado, já era de esperar que as relações já tivessem nas Formas Normais pedidas,
-devido ao facto de o ID (Primary key) determinar o resto dos atributos.
+devido ao facto de o ID (Primary key) determinar o resto dos atributos, criando dependências funcionais muito simples
 
 
 
