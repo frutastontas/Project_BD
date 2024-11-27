@@ -1,19 +1,15 @@
 
 
 #### Modelo relacional
-Na passagem do modelo em UML para o esquema relacional decídimos manter
-um padrão consistente na conversão.
+Na passagem do modelo em UML para o esquema relacional decídimos manter um padrão consistente na conversão.
 
-As transições foram feitas da maneira como foi mostrado nas aulas. Por exemplo, numa relação de "um para muitos" tinha-se duas opções, ou criava-se 
-uma nova relação com duas foreign keys que apontam para cada uma das relaçôes, sendo a Primary Key a chave que aponta para a relação de "Many", ou
-colocava-se no lado "Many" uma foreign key que referencia a outra relação.
-
-Na nossa conversão decídimos ir com o primeiro, porque achamos que ficaria mais simples e percéptivel. Assim, cada foreign key mapeia
-para o ID (ou um nome equivalente) das entidades associadas e têm uma abreviatura dessa entidade no nome.
+As transições foram feitas da maneira como foi mostrado nas aulas:
+    Numa relação de "um para muitos" decidimos adicionar uma foreign key no lado do "muitos" que aponta para a primary key da outra relação.
+    Na relação de "muitos para muitos" críamos uma nova relação que contém duas foreign keys, em que cada uma aponta para a primary key da relação.
+    Finalmente, para a multiplicidade "um para um" foi adicionado uma foreign key na relação em que se esperava menos tuples que aponta para a primary key da outra relação.
 
 Usou-se o estilo E/R para as relações de subclasses das classes de Veículo e Utilizador. Assim existe uma entidade principal, que é a super classe,
-e nas subclasses existe uma foreign key que referencia a Primary Key da super classe,
-que neste caso é o ID, e também é uma Primary Key da subclasse.
+e nas subclasses existe uma foreign key que referencia a Primary Key da super classe e também é uma Primary Key da subclasse.
 
 --"Colocar aqui o modelo relacional"
 
@@ -22,7 +18,7 @@ que neste caso é o ID, e também é uma Primary Key da subclasse.
 
 Quanto toca ás dependências funcionais estas são bastante simples, devido à maneira como o projeto foi abordado e estruturado.
 Logo as diversas entidades já se encontram isoladas e separadas.
-Isto faz com que as únicas dependências funcionais ,que existem em cada relação, sejam o seu ID determinar o resto dos atributos.
+Isto faz com que as únicas dependências funcionais, que existem em cada relação, sejam o seu ID determinar o resto dos atributos.
 
 Veículo: id → Consumo, Cor, Ano, Tração, Número de assentos, Estado, Série, id_vendedor
 Combustível: id → Tipo
@@ -53,7 +49,3 @@ para chegar a uma delas.
 
 Dada a maneira como este projeto foi abordado, já era de esperar que as relações já tivessem nas Formas Normais pedidas,
 devido ao facto de o ID (Primary key) determinar o resto dos atributos, criando dependências funcionais muito simples.
-
-
-
-
