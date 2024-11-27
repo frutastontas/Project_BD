@@ -21,26 +21,26 @@ que neste caso é o ID, e também é uma Primary Key da subclasse.
 #### Dependencias Funcionais
 
 Quanto toca ás dependências funcionais estas são bastante simples, devido à maneira como o projeto foi abordado e estruturado.
-Assim, as diversas entidades já se encontram isoladas e separadas.
+Logo as diversas entidades já se encontram isoladas e separadas.
 Isto faz com que as únicas dependências funcionais ,que existem em cada relação, sejam o seu ID determinar o resto dos atributos.
 
-Veículo: id_veículo → Consumo, Cor, Ano, Tração, Número de assentos, Estado
+Veículo: id → Consumo, Cor, Ano, Tração, Número de assentos, Estado, Série, id_vendedor
 Combustível: id → Tipo
 Funciona_a: "Esta relação não apresenta qualquer dependência funcional"
-Motor: Número de série → Nome, Cilindrada, Número de cilindros, Número de válvulas, Aspiração, Binário, Potência
+Motor: Número_série → Nome, Cilindrada, Número de cilindros, Número de válvulas, Aspiração, Binário, Potência
 Utilizador: id → Email, Hash Palavra Passe, Username, País, Morada
 Cliente: id → Preferências
 Vendedor: id → histórico de vendas, Marca associada
-Anúncio: id → Data
+Anúncio: id → Data, id_veículo, id_vendedor
 Interagiu: "Esta relação não apresenta qualquer dependência funcional"
-Marca: id → Nome, País de Origem
+Marca: id → Nome, País_Origem, id_vendedor
 Carro: id → Categoria, Número de portas
 Motociclo: id → Categoria
-Modelo: id → Nome, Data de lançamento, Variante
+Modelo: id → Nome, Data de lançamento, Variante, id_carro, id_motociclo, id_marca
 
 Para um relação estar na Forma Normal Boyce-Codd, é preciso que para todas as dependências funcionais não triviais,
 o lado esquerdo seja uma superchave da relação (relembrando que uma chave também é uma superchave).
-A Terceira Forma Normal têm a mesma regra da Forma anterior porém acrescenta uma regra que define que os atributos
+A Terceira Forma Normal têm a mesma regra da Forma anterior, porém acrescenta uma regra que define que os atributos
 do lado direito são prime, ou seja, são atributos que fazem parte de uma chave. Se a relação corresponder a uma das regras,
 está na Terceira Forma Normal;
 
@@ -49,10 +49,10 @@ esquerdo são uma chave ou superchave e/ou os atributos do lado direito são pri
 
 As nossas relações já partem de uma chave primária, que é o ID. Assim é possível concluir que as
 relações já se encontram numa das Formas Normais pedidas, não necessitando de se realizar decomposições 
-para chegar a uma das Formas.
+para chegar a uma delas.
 
 Dada a maneira como este projeto foi abordado, já era de esperar que as relações já tivessem nas Formas Normais pedidas,
-devido ao facto de o ID (Primary key) determinar o resto dos atributos, criando dependências funcionais muito simples
+devido ao facto de o ID (Primary key) determinar o resto dos atributos, criando dependências funcionais muito simples.
 
 
 
