@@ -1,0 +1,48 @@
+//brand,model,release year,displacement (L),type of vehicle,consumption (l/100km),drivetrain,fuel type,gearbox,power (hp),number of valves,top speed (kph),weight (kg),number of seats,short description,price (USD)
+//maioria dos dados são tirados da API do script. alguns dados, aqueles q têm de ser inventados, foi o chat-gpt 4o q fez.
+
+
+mclaren,p1,2014,3.8,two seater,13.84,rwd,hybrid(gas, electricity),a,903,32,338,1395,2,"17000 km, no damage, warranty expired",1300000
+porsche,918 spyder,2015,4.6,two seater,10.69,awd,hybrid(gas, electricity),a,887,32,340,1678,2,"15000 km, no damage, 1 year warranty left",1400000
+land rover,range rover velar,2018,2.0,small sport utility vehicle,11.76,awd,gas,a,250,16,217,1950,5,"5000 km, minor scratches, 2 years warranty left",55000
+ferrari,f430,2005,4.3,two seater,19.6,rwd,gas,a,483,32,315,1475,2,"25000 km, no damage, warranty expired",90000
+ferrari,488 gtb,2016,3.9,two seater,13.07,rwd,gas,a,661,32,330,1451,2,"10000 km, no damage, 1 year warranty left",240000
+ferrari,458 italia,2010,4.5,two seater,16.8,rwd,gas,a,562,32,325,1485,2,"20000 km, no damage, warranty expired",200000
+toyota,camry,1993,2.2,midsize car,11.2,fwd,gas,a,130,16,180,1361,5,"150000 km, no damage, warranty expired",3000
+toyota,corolla,1993,1.6,compact car,9.8,fwd,gas,a,115,16,177,1134,5,"120000 km, no damage, warranty expired",2500
+toyota,yaris,2007,1.5,subcompact car,7.59,fwd,gas,a,106,16,169,1043,5,"90000 km, no damage, warranty expired",5000
+chevrolet,camaro,1994,5.7,subcompact car,11.76,rwd,gas,a,275,16,209,1542,4,"130000 km, no damage, warranty expired",7000
+ford,mustang,1994,5.0,subcompact car,11.76,rwd,gas,a,215,16,217,1542,4,"120000 km, no damage, warranty expired",8000
+ferrari,488 gtb,2016,3.9,two seater,13.07,rwd,gas,a,661,32,330,1451,2,"16000 km, no damage, 1 year warranty left",230000
+bmw,m3,1995,3.0,subcompact car,11.76,rwd,gas,a,240,16,250,1361,5,"110000 km, no damage, warranty expired",12000
+infiniti,m45,2003,4.5,compact car,13.07,rwd,gas,a,340,32,250,1814,5,"100000 km, no damage, warranty expired",15000
+bmw,5 series,1986,3.4,compact car,10.23,rwd,diesel,a,182,12,209,1588,5,"200000 km, no damage, warranty expired",5000
+porsche,taycan turbo,2020,0,large car,3.41,awd,electricity,a,616,0,260,2322,5,"8000 km, no damage, 3 years warranty left",180000
+bmw,5 series,1986,3.4,compact car,10.23,rwd,diesel,a,182,12,209,1588,5,"200000 km, no damage, warranty expired",5200
+bmw,5 series,1986,3.4,compact car,10.23,rwd,diesel,a,182,12,209,1588,5,"150000 km, no damage, warranty expired",5500
+rivian,r1t,2022,0,standard pickup truck,3.36,4wd,electricity,a,835,0,201,3175,5,"2000 km, no damage, 4 years warranty left",75000
+ford,f150 pickup 2wd,1993,4.9,standard pickup truck,15.68,rwd,gas,a,185,16,161,2087,3,"180000 km, no damage, warranty expired",3000
+audi,rs6,2003,4.2,midsize car,14.7,awd,gas,a,444,40,250,1905,5,"150000 km, no damage, warranty expired",12000
+audi,a3,2006,2.0,small station wagon,9.8,fwd,gas,m,200,16,209,1406,5,"80000 km, no damage, warranty expired",7000
+bmw,x5,2000,4.4,sport utility vehicle,16.8,rwd,gas,a,282,16,225,2223,5,"170000 km, no damage, warranty expired",8000
+porsche,cayenne s,2003,4.5,special purpose vehicle,16.8,awd,gas,a,340,32,241,2041,5,"120000 km, no damage, warranty expired",10000
+porsche,carrera 2 911 gt3,2004,3.6,two seater,14.7,rwd,gas,m,381,24,306,1361,2,"80000 km, no damage, warranty expired",80000
+porsche,cayenne s,2003,4.5,special purpose vehicle,16.8,awd,gas,a,340,32,241,2041,5,"180000 km, minor scratches, warranty expired",8500
+porsche,cayman s,2006,3.4,two seater,11.2,rwd,gas,a,295,24,275,1451,2,"90000 km, no damage, warranty expired",40000
+honda,civic,1994,1.6,two seater,8.4,fwd,gas,a,125,16,193,1089,2,"150000 km, no damage, warranty expired",3000
+ford,transit connect,2010,2.0,special purpose vehicle,10.23,fwd,gas,a,136,16,161,1588,5,"90000 km, minor scratches, warranty expired",8000
+plymouth,sundance/duster,1994,2.2,compact car,10.23,fwd,gas,a,100,16,161,1134,5,"140000 km, no damage, warranty expired",2500
+audi,a4,1996,1.8,compact car,12.38,fwd,gas,a,190,20,209,1451,5,"150000 km, no damage, warranty expired",5000
+lexus,lfa,2012,4.8,two seater,18.09,rwd,gas,a,552,32,325,1588,2,"20000 km, no damage, warranty expired",375000
+lamborghini,aventador coupe,2012,6.5,two seater,18.09,awd,gas,a,690,48,349,1723,2,"10000 km, no damage, warranty expired",400000
+lexus,lfa,2012,4.8,two seater,18.09,rwd,gas,a,552,32,325,1588,2,"10000 km, no damage, warranty expired",390000
+honda,civic,1994,1.6,two seater,8.4,fwd,gas,a,125,16,193,1089,2,"160000 km, crashed (rear ended), warranty expired",1000
+lamborghini,huracan,2015,5.2,two seater,14.7,awd,gas,a,602,40,323,1542,2,"15000 km, no damage, 1 year warranty left",220000
+audi,sq7,2020,4.0,standard sport utility vehicle,13.84,awd,gas,a,500,32,250,2359,5,"5000 km, no damage, 3 years warranty left",95000
+audi,r8,2008,4.2,two seater,15.68,awd,gas,m,420,32,306,1633,2,"60000 km, no damage, warranty expired",80000
+mercedes-benz,cla45 amg 4matic,2014,2.0,compact car,9.05,4wd,gas,a,375,16,250,1542,5,"30000 km, no damage, 1 year warranty left",45000
+mercedes-benz,amg cla35 4matic,2020,2.0,compact car,9.41,4wd,gas,a,302,16,250,1588,5,"10000 km, no damage, 3 years warranty left",50000
+mercedes-benz,cls63 amg,2007,6.2,compact car,16.8,rwd,gas,a,507,32,250,1905,4,"70000 km, no damage, warranty expired",30000
+land rover,defender 110,1993,3.9,special purpose vehicle,23.52,awd,gas,m,180,16,161,1950,9,"200000 km, no damage, warranty expired",25000
+bmw,i8,2014,1.5,subcompact car,8.4,awd,hybrid(gas, electricity),a,369,12,250,1497,4,"30000 km, no damage, 2 years warranty left",90000
+mercedes-benz,cla45 amg 4matic,2014,2.0,compact car,9.05,4wd,gas,a,375,16,250,1542,5,"31000 km, no damage, 1 year warranty left",44000
