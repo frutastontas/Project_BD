@@ -12,7 +12,19 @@ Usou-se o estilo E/R para as relações de subclasses das classes de Veículo e 
 e nas subclasses existe uma foreign key que referencia a Primary Key da super classe e também é uma Primary Key da subclasse.
 
 --"Colocar aqui o modelo relacional"
-
+Veículo(id [PK], Consumo, dataNascimento, Tração, Número de assentos, Estado, Série->Motor, id_vendedor->Vendedor)
+Combustível(id [PK], Tipo)
+Funciona_a(id_veículo [PK]->Veículo, id_combustível [PK]->Combustível)
+Motor(Número_série [PK], Nome, Cilindrada, Número de cilindros, Número de válvulas, Aspiração, Binário, Potência)
+Utilizador(id [PK], Email, Hash_Palavra_Passe, Username, País, Morada)
+Cliente(id [PK]->Utilizador, Preferências)
+Vendedor(id [PK]->Utilizador, histórico, marca_associada)
+Anúcio(id, Data, id_veículo->Veículo, id_vendedor->Vendedor)
+Interagiu(id_anúncio [PK]->Anúcio, id_vendedor->Vendedor)
+Marca(id [PK], Nome, País_Origem, id_vendedor->Vendedor)
+Carro(id [PK]->Veículo, Categoria, Número_portas)
+Motociclo(id [PK]->Veículo, Categoria)
+Modelo(id [PK], Nome, Data_lançamento, Variante, id_carro->Carro, id_motociclo->Motociclo)
 
 #### Dependencias Funcionais
 
@@ -30,9 +42,9 @@ Vendedor: id → histórico de vendas, Marca associada
 Anúncio: id → Data, id_veículo, id_vendedor
 Interagiu: "Esta relação não apresenta qualquer dependência funcional"
 Marca: id → Nome, País_Origem, id_vendedor
-Carro: id → Categoria, Número de portas
+Carro: id → Categoria, Número_portas
 Motociclo: id → Categoria
-Modelo: id → Nome, Data de lançamento, Variante, id_carro, id_motociclo, id_marca
+Modelo: id → Nome, Data_lançamento, Variante, id_carro, id_motociclo, id_marca
 
 Para um relação estar na Forma Normal Boyce-Codd, é preciso que para todas as dependências funcionais não triviais,
 o lado esquerdo seja uma superchave da relação (relembrando que uma chave também é uma superchave).
