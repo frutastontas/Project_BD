@@ -1,5 +1,4 @@
 
-
 #### Modelo relacional
 Na passagem do modelo em UML para o esquema relacional decídimos manter um padrão consistente na conversão.
 
@@ -12,7 +11,7 @@ Usou-se o estilo E/R para as relações de subclasses das classes de Veículo e 
 e nas subclasses existe uma foreign key que referencia a Primary Key da super classe e também é uma Primary Key da subclasse.
 
 --"Colocar aqui o modelo relacional"
-Veículo(id [PK], Consumo, dataNascimento, Tração, Número de assentos, Estado, Série->Motor, id_vendedor->Vendedor)
+Veículo(id [PK], Consumo, Cor,Preço,Ano, Peso, Tração, Número_de_assentos, Estado, Série->Motor, id_vendedor->Vendedor)
 Combustível(id [PK], Tipo)
 Funciona_a(id_veículo [PK]->Veículo, id_combustível [PK]->Combustível)
 Motor(Número_série [PK], Nome, Cilindrada, Número de cilindros, Número de válvulas, Aspiração, Binário, Potência)
@@ -24,7 +23,7 @@ Interagiu(id_anúncio [PK]->Anúcio, id_vendedor->Vendedor)
 Marca(id [PK], Nome, País_Origem, id_vendedor->Vendedor)
 Carro(id [PK]->Veículo, Categoria, Número_portas)
 Motociclo(id [PK]->Veículo, Categoria)
-Modelo(id [PK], Nome, Data_lançamento, Variante, id_carro->Carro, id_motociclo->Motociclo)
+Modelo(id [PK], Nome, Data_lançamento, Variante, id_carro->Carro, id_motociclo->Motociclo, id_marca->Marca)
 
 #### Dependencias Funcionais
 
@@ -32,13 +31,13 @@ Quanto toca ás dependências funcionais estas são bastante simples, devido à 
 Logo as diversas entidades já se encontram isoladas e separadas.
 Isto faz com que as únicas dependências funcionais, que existem em cada relação, sejam o seu ID determinar o resto dos atributos.
 
-Veículo: id → Consumo, Cor, Ano, Tração, Número de assentos, Estado, Série, id_vendedor
+Veículo: id → Consumo, Cor, Ano, Tração, Número de assentos, Estado, Série, id_vendedor, Peso, Preço
 Combustível: id → Tipo
 Funciona_a: "Esta relação não apresenta qualquer dependência funcional"
-Motor: Número_série → Nome, Cilindrada, Número de cilindros, Número de válvulas, Aspiração, Binário, Potência
-Utilizador: id → Email, Hash Palavra Passe, Username, País, Morada
+Motor: Número_série → Nome, Cilindrada, Número_de_cilindros, Número_de_válvulas, Aspiração, Binário, Potência
+Utilizador: id → Email, Hash_Palavra_Passe, Username, País, Morada
 Cliente: id → Preferências
-Vendedor: id → histórico de vendas, Marca associada
+Vendedor: id → histórico, marca_associada
 Anúncio: id → Data, id_veículo, id_vendedor
 Interagiu: "Esta relação não apresenta qualquer dependência funcional"
 Marca: id → Nome, País_Origem, id_vendedor
@@ -61,3 +60,25 @@ para chegar a uma delas.
 
 Dada a maneira como este projeto foi abordado, já era de esperar que as relações já tivessem nas Formas Normais pedidas,
 devido ao facto de o ID (Primary key) determinar o resto dos atributos, criando dependências funcionais muito simples.
+
+
+#### Criação base de dados
+
+Cada relação considerada deve ser representada por uma tabela com o mesmo nome, criada usando o comando CREATE TABLE <nome da relação>(<atributos>).
+Os atributos devem ser listados separados por vírgulas, e cada um deve ser associado a um tipo de dado que lhe vai ser fornecido.
+Apesar do SQLite não impor qualquer restrição quanto ao tipo de dados inseridos na coluna, é uma boa prática definir esses tipos ao criar a base de dados.
+
+No nosso caso, os tipos de dados utilizados foram: TEXT para atributos de texto, INT para valores numéricos e DATE para datas (no formato 'YYYY-MM-DD').
+
+Em todas as definições de tabelas, também especificamos as chaves primárias (primary keys) da relação.
+Quando a chave primária é formada por um único atributo, utilizamos as palavras PRIMARY KEY logo após o nome do atributo.
+Nos casos em que a chave primária é composta por mais de um atributo, utilizamos a sintaxe PRIMARY KEY(<atributo1>, <atributo2>) para indicar os atributos que a compõem.
+
+Além das chaves primárias, também definimos chaves estrangeiras para representar as associações entre as relações.
+Para isso, utilizamos a sintaxe <atributo> REFERENCES <tabela>(<atributo>) ON UPDATE CASCADE e ON DELETE SET NULL,
+garantindo que, ao atualizar os valores na tabela referenciada, as alterações sejam propagadas automaticamente para todas as tabelas associadas e assim resolver possíveis problemas.
+
+Decidimos incluir também restrições para quase todos os atributos das tabelas, usando para a maioria dos casos o NOT NULL.
+
+Para evitar problemas ao criar a base de dados, incluímos no início do arquivo comandos que removem as tabelas caso elas já existam.
+Utilizamos a instrução DROP TABLE IF EXISTS <nome da tabela> para apagar as tabelas existentes antes de recriá-las.
