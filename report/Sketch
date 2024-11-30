@@ -83,6 +83,10 @@ Decidimos incluir também restrições para quase todos os atributos das tabelas
 Para evitar problemas ao criar a base de dados, incluímos no início do arquivo comandos que removem as tabelas caso elas já existam.
 Utilizamos a instrução DROP TABLE IF EXISTS <nome da tabela> para apagar as tabelas existentes antes de recriá-las.
 
+É importante também referir que os nomes usados para os atributos de cada relação no ficheiro create1.sql são os nomes dos atributos
+do modelo relacional só que em uppercase devido à nossa conformidade de escrever SQLite em uppercase. Como os atributos no SQLite 
+são 'case insensitive' isto não faz qualquer diferença na prática.
+
 
 #### Carregamento de Dados
 
