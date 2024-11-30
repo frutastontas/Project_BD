@@ -46,9 +46,9 @@ Motociclo: id → Categoria
 Modelo: id → Nome, Data_lançamento, Variante, id_carro, id_motociclo, id_marca
 
 Para um relação estar na Forma Normal Boyce-Codd, é preciso que para todas as dependências funcionais não triviais,
-o lado esquerdo seja uma superchave da relação (relembrando que uma chave também é uma superchave).
+o lado esquerdo da dependência, seja uma superchave da relação (relembrando que uma chave também é uma superchave).
 A Terceira Forma Normal têm a mesma regra da Forma anterior, porém acrescenta uma regra que define que os atributos
-do lado direito são prime, ou seja, são atributos que fazem parte de uma chave. Se a relação corresponder a uma das regras,
+do lado direito sejam Prime, ou seja, são atributos que fazem parte de uma chave. Se a relação corresponder a uma das regras,
 está na Terceira Forma Normal;
 
 Pode-se concluir que para termos uma ou ambas as formas, temos que garantir que para todas as suas dependências funcionais os atributos do lado 
@@ -82,3 +82,19 @@ Decidimos incluir também restrições para quase todos os atributos das tabelas
 
 Para evitar problemas ao criar a base de dados, incluímos no início do arquivo comandos que removem as tabelas caso elas já existam.
 Utilizamos a instrução DROP TABLE IF EXISTS <nome da tabela> para apagar as tabelas existentes antes de recriá-las.
+
+
+#### Carregamento de Dados
+
+No que toca ao acto de popular a nossa base de dados, usamos diversos comandos de 
+'INSERT INTO TABLE <nome da tabela> VALUES (<valores>);' no ficheiro populate1.sql. 
+
+Nas nossas tabelas principais quisémos colocar entre 8 a 12 tuplos. Fizémos também um esforço para utilizar dados reais,
+que obtémos através de um 'scraping' de uma website (foi usado este URL "https://api.api-ninjas.com/v1/cars?limit=1&model=").
+Aquilo que não conseguimos encontrar, preenchémos com dados fictícios, mas que fizessem sentido dado o contexto da nossa base de dados.
+
+Para criar os 'INSERT' utilízamos um script de Python, a fim de tornar o processo mais automizado e eficiente. Assim tívemos de nos preocupar 
+mais com a consistência das primary keys e as foreign keys.
+
+Tentámos colocar uma quantidade de dados que desse um senso de uma base de dados verdadeira de algum serviço 
+venda de carros online.
