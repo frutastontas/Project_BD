@@ -102,3 +102,36 @@ mais com a consistência das primary keys e as foreign keys.
 
 Tentámos colocar uma quantidade de dados que desse um senso de uma base de dados verdadeira de algum serviço 
 venda de carros online.
+
+
+
+#### Analise de respostas
+Modelo relacional e Dependencias funcionais
+
+Começando pelo modelo relacional, foram necessárias várias iterações até que o output tivesse o formato desejado.
+Na resposta inicial, o modelo relacional foi apresentado em forma de tópicos, utilizando uma linguagem semelhante ao SQL. 
+Por isso, solicitamos que a resposta fosse ajustada para o formato de esquema R1(atr1 [PK], atr2, atr3 → R2).
+Esta sugestão trouxe o modelo mais próximo do formato pretendido, fazendo com que o modelo identificasse todas as primary keys.
+No final, o resultado deste pedido foi bastante próximo do nosso.
+
+Passando agora às dependências funcionais, ao darmos o modelo relacional e sugerindo para listar todas as dependências funcionais
+das relações, a IA chegou à mesma conclusão que nós. As dependências funcionais de cada 
+relação serem dependentes apenas do id (caso geral) e, nalguns casos, nem sequer 
+existirem dependências funcionais de atributos relevantes para identificar.
+Concluímos então que a resposta dada pela ferramenta IA foi igual à nossa proposta de dependências funcionais no modelo relacional.
+
+Finalmente, pedimos para avaliar as dependências funcionais a fim de identificar possíveis violações da forma normal de Boyce-Codd e Terceira forma normal.
+Conclui-se que todas elas estavam em pelo menos uma destas (e a maioria em ambas), sendo igual à conclusão que tínhamos chegado préviamente.
+
+Criação Base de Dados
+
+Colocámos uma questão ao modelo:
+Criar um ficheiro SQL que modelasse a base de dados que já estava a ser 
+trabalhada, incluindo os DROP TABLES;
+
+Comparando o nosso ficheiro com o criado pela IA notou-se que a estrutura estava exatamente igual no que toca ao código e aos comandos.
+Porém é de salientar que a IA inseriu diversos constraints como NOT NULL , UNIQUE e CHECK("expressão") em alguns atributos que préviamente não tinham. 
+Através dessa proposta tívemos a ideia de também inserir nomes nas constraints, para que se fosse violada uma constraint saberia-se qual tinha sido. 
+Para além disso, a IA também nos fez aperceber de um erro de sintaxe quanto à declaração das foreign keys das tabelas, dado que faltava colocar
+parênteses no atributo da relação que continha a foreign key.
+
