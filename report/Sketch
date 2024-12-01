@@ -135,3 +135,24 @@ Através dessa proposta tívemos a ideia de também inserir nomes nas constraint
 Para além disso, a IA também nos fez aperceber de um erro de sintaxe quanto à declaração das foreign keys das tabelas, dado que faltava colocar
 parênteses no atributo da relação que continha a foreign key.
 
+Sendo assim, a IA conseguiu melhorar a nossa base de dados introduzindo mais rigor nela ,devido às ideias que esta forneceu na sua proposta para um
+ficheiro sql que modelasse a base de dados, adaptando essas ideias para criar um novo ficheiro create2.sql.
+
+#### População com IA
+
+Por fim, quanto à inserção de dados nas tabelas decidimos dar à IA o nosso código do populate1.sql
+e pedir para expandir as inserções com novos valores.
+Embora os novos dados não se encontrassem tão bem relacionados como os criados por nós 
+manualmente, acabaram por apresentar um estilo e formato mais próximo dos nossos e foram
+incluídos no ficheiro final.
+
+O modelo fez um bom trabalho em inserir dados em tabelas como Utilizador, Cliente, Combustível e Motor já que
+os dados a inserir são mais objetivos e não existem tantas relações (não precisa de se preocupar com muitas foreign keys).
+Já em tabelas como Anúncio, Veículo ou Modelo em que existem mais referências e relações entre os dados, o modelo teve mais dificuldade e, por 
+isso, alguns dos dados no ficheiro populate2.sql podem não fazer tanta lógica do ponto de vista do mundo real.
+
+Ainda assim, dada a dificuldade associada a criar inserções para bases 
+de dados mais complexas com várias associações e relações entre os dados, 
+foi notável o trabalho desempenhado pela IA por conseguir gerar boas quantidades de dados, no 
+formato desejado.
+
